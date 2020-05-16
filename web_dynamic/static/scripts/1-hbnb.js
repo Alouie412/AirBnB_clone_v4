@@ -1,15 +1,18 @@
 $( document ).ready(function () {
-  const amenityList = [];
+  const amenityList = {};
   $('input[type="checkbox"]').click(function () {
-    let x = document.getElementById("amenity.name")
-    if (x.checked === true) {
-      amenityList[$(this).data('id') = x
-    } else {
-      delete amenityList[$(this).data('id')];
-    }
+    $(this).each(function () {
+      if (this.checked === true) {
+        amenityList[$(this).data('id')] = $(this).data('name');
+      } else {
+        delete amenityList[$(this).data('id')];
+      }
+    });
 
-    if (Object.values(amenityList).length > 0 {
-      $('.amenities h4').text(Object.values(amenityList));
+    console.log("Ohaithar");
+
+    if (Object.values(amenityList).length > 0) {
+      $('.amenities h4').text(Object.values(amenityList).join(', '));
     } else {
       $('.amenities h4').html('&nbsp');
     }
