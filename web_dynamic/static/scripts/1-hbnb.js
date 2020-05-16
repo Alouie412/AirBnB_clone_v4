@@ -9,8 +9,6 @@ $( document ).ready(function () {
       }
     });
 
-    console.log("Ohaithar");
-
     if (Object.values(amenityList).length > 0) {
       $('.amenities h4').text(Object.values(amenityList).join(', '));
     } else {
