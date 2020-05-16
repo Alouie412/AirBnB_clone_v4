@@ -43,7 +43,7 @@
 	    <ul>
 	      {% for amenity in amenities %}
               <!-- Checkboxes will not display for some reason -->
-	      <li><INPUT type="checkbox" style="display: inline-block;" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</li>
+	      <li><INPUT type="checkbox" style="margin-right: 10px;" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>
