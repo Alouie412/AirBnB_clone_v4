@@ -28,9 +28,9 @@ $.get('http://0.0.0.0:5001/api/v1/status/', function (data, status) {
 $.ajax({
   type: 'POST',
   url: 'http://0.0.0.0:5001/api/v1/places_search/',
-  contentType: 'application/json';
-  dataType: 'json';
-  data: '{}';
+  contentType: 'application/json',
+  dataType: 'json',
+  data: '{}',
   success: function (data) {
     const placeList;
     for (placeList of Object.values(data)) {
