@@ -18,9 +18,12 @@ $(document).ready(function () {
 });
 
 $.get('http://0.0.0.0:5001/api/v1/status/', function (data, status) {
-  if (data.status === 'OK') {
+  console.log(status);
+  if (status === 'success') {
+    console.log("Connected");
     $('DIV#api_status').addClass('available');
   } else {
+    console.log("Not connected");
     $('DIV#api_status').removeClass('available');
   }
 });
