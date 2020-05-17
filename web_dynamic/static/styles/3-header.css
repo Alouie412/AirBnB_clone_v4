@@ -23,3 +23,11 @@ header .logo {
 .available {
     background-color: #ff545f;
 }
+
+.amenities h4 {
+	width: 210px;
+	height: 17px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
