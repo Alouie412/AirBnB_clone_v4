@@ -1,4 +1,4 @@
-$( document ).ready(function () {
+$(document).ready(function () {
   const amenityList = {};
   $('input[type="checkbox"]').click(function () {
     $(this).each(function () {
@@ -32,9 +32,9 @@ $.ajax({
   dataType: 'json',
   data: '{}',
   success: function (data) {
-    const placeList;
+    let placeList;
     for (placeList of Object.values(data)) {
-      //Find a better way to write this nightmare of a line. Maybe Mustache.js
+      // Find a better way to write this nightmare of a line. Maybe Mustache.js
       $('section.places').append('<article><div class="title_box"><h2>' + placeList.name + '</h2></div>' + '<div class="price_by_night">' + placeList.price_by_night + '</div>' + '<div class="information">' + '<div class="max_guest">' + placeList.max_guest + ' Guest</div>' + '<div class="number_rooms">' + placeList.number_rooms + ' Bedroom</div>' + '<div class="number_bathrooms">' + placeList.number_bathrooms + ' Bathroom</div>' + '</div>' + '<div class="description">' + placeList.description + '</div></article>');
     }
   }

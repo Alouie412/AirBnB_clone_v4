@@ -1,4 +1,4 @@
-$( document ).ready(function () {
+$(document).ready(function () {
   const amenityList = {};
   $('input[type="checkbox"]').click(function () {
     $(this).each(function () {
