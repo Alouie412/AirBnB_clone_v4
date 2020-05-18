@@ -31,3 +31,11 @@ header .logo {
     overflow: hidden;
     white-space: nowrap;
 }
+
+.locations h4 {
+	width: 210px;
+	height: 17px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
