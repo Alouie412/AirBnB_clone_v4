@@ -135,6 +135,8 @@ def places_search():
         cities = data.get('cities', None)
         amenities = data.get('amenities', None)
 
+    incAms = request.args.get('incAms', default='false', type=str)
+
     if not data or not len(data) or (
             not states and
             not cities and
@@ -142,7 +144,11 @@ def places_search():
         places = storage.all(Place).values()
         list_places = []
         for place in places:
-            list_places.append(place.to_dict())
+            ap = place.to_dict()
+            if incAms != "false":
+                ap['amenities'] = [am.to_dict()['name']
+                                   for am in place.amenities]
+            list_places.append(ap)
         return jsonify(list_places)
 
     list_places = []
@@ -171,10 +177,15 @@ def places_search():
                        if all([am in place.amenities
                                for am in amenities_obj])]
 
+
     places = []
     for p in list_places:
-        d = p.to_dict()
-        d.pop('amenities', None)
-        places.append(d)
+        ap = place.to_dict()
+        if incAms != "false":
+            ap['amenities'] = [am.to_dict()['name']
+                               for am in place.amenities]
+        else:
+            ap.pop('amenities', None)
+        places.append(ap)
 
     return jsonify(places)
