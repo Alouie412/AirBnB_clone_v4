@@ -19,7 +19,7 @@ function getReviews (data) {
 function update () {
   $.ajax({
     type: 'POST',
-    url: 'http://0.0.0.0:5001/api/v1/places_search/?incAms=true',
+    url: 'http://localhost:5001/api/v1/places_search/?incAms=true',
     contentType: 'application/json',
     dataType: 'json',
     data: JSON.stringify({
@@ -123,7 +123,7 @@ $(document).ready(function () {
     update();
   });
 
-  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, status) {
+  $.get('http://localhost:5001/api/v1/status/', function (data, status) {
     if (data.status === 'OK') {
       $('DIV#api_status').addClass('available');
     } else {
