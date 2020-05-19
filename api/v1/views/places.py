@@ -180,7 +180,7 @@ def places_search():
 
     places = []
     for p in list_places:
-        ap = place.to_dict()
+        ap = p.to_dict()
         if incAms != "false":
             ap['amenities'] = [am.to_dict()['name']
                                for am in place.amenities]
